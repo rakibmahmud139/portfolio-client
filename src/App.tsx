@@ -4,6 +4,8 @@ import { Navbar } from "./components/Navbar";
 import { Box } from "@mui/material";
 import bannerImage from "../src/assets/18309220_SL-043021-42650-18.jpg";
 import About from "./pages/About";
+import Skills from "./pages/Skills";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Banner />
       </Box>
       <About />
+      <Skills />
+      <Contact />
     </Box>
   );
 }

@@ -5,7 +5,7 @@ const Banner = () => {
   return (
     <Container
       maxWidth="lg"
-      sx={{ mt: { xs: "16px", sm: "32px", md: "64px" } }}
+      sx={{ mt: { xs: "16px", sm: "32px", md: "48px" } }}
     >
       <Box
         sx={{
