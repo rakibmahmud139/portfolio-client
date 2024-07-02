@@ -12,14 +12,14 @@ const Banner = () => {
           display: { xs: "block", md: "flex" },
           justifyContent: "space-between",
           alignItems: "center",
-          textAlign: { xs: "center", md: "left" },
+          textAlign: "left",
         }}
       >
         <Box>
           <Typography
             sx={{
               color: "#FF8F00",
-              fontSize: { xs: "24px", sm: "28px", md: "36px" },
+              fontSize: { xs: "28px", sm: "28px", md: "36px" },
             }}
           >
             Hi,
@@ -37,7 +37,7 @@ const Banner = () => {
             component="h1"
             sx={{
               color: "#fff",
-              fontSize: { xs: "24px", sm: "32px", md: "48px" },
+              fontSize: { xs: "28px", sm: "32px", md: "48px" },
             }}
           >
             Full Stack Developer
@@ -58,7 +58,7 @@ const Banner = () => {
             sx={{
               mt: { xs: "24px", sm: "36px", md: "48px" },
               display: "flex",
-              justifyContent: { xs: "center", md: "flex-start" },
+              justifyContent: { md: "flex-start" },
               gap: "12px",
             }}
           >

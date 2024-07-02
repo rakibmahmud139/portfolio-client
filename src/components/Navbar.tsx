@@ -18,7 +18,7 @@ import { Container } from "@mui/material";
 const drawerWidth = 240;
 const navItems = [
   "Home",
-  "About Us",
+  "About Me",
   "Experience",
   "Project",
   "Blog",
