@@ -56,7 +56,13 @@ const Contact = () => {
         Contact Me
       </Typography>
       <Container>
-        <Grid container spacing={4} justifyContent="space-evenly">
+        <Grid
+          container
+          spacing={4}
+          justifyContent="space-evenly"
+          justifyItems="center"
+          alignContent="center"
+        >
           <Grid item xs={12} md={5}>
             <Typography component="h1" variant="h5" color="#373A40">
               Get In Touch

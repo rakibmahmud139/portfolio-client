@@ -1,15 +1,15 @@
 import { baseApi } from "../api/baseApi";
 
-const projectApi = baseApi.injectEndpoints({
+const skillApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
-    getAllProjects: builder.query({
+    getAllSkills: builder.query({
       query: () => ({
         url: "/skills",
         method: "GET",
       }),
-      providesTags: ["project"],
+      providesTags: ["skill"],
     }),
   }),
 });
 
-export const { useGetAllProjectsQuery } = projectApi;
+export const { useGetAllSkillsQuery } = skillApi;
