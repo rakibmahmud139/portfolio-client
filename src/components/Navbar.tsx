@@ -1,159 +1,74 @@
-import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
-import Divider from "@mui/material/Divider";
-import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
-import MenuOpenIcon from "@mui/icons-material/MenuOpen";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import { Container } from "@mui/material";
-
-const drawerWidth = 240;
-const navItems = [
-  "Home",
-  "About Me",
-  "Experience",
-  "Project",
-  "Blog",
-  "Get In Touch",
-];
+import { Box, IconButton, Container } from "@mui/material";
+import {
+  Home,
+  Person,
+  List,
+  Star,
+  Favorite,
+  Book,
+  FileCopy,
+} from "@mui/icons-material";
 
 export const Navbar = () => {
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
-  };
-
-  const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h5" sx={{ my: 2 }}>
-        Rakib{" "}
-        <Typography
-          component="span"
-          sx={{ color: "#FF8F00", fontSize: "24px" }}
-        >
-          Mahmud
-        </Typography>
-      </Typography>
-      <Divider />
-      <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
+  const icons = [
+    { icon: <Home />, selected: true },
+    { icon: <Person />, selected: false },
+    { icon: <List />, selected: false },
+    { icon: <Star />, selected: false },
+    { icon: <Favorite />, selected: false },
+    { icon: <Book />, selected: false },
+    { icon: <FileCopy />, selected: false },
+  ];
 
   return (
-    <Box sx={{ display: "flex", mb: "0px" }}>
-      <AppBar
+    <Container
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "rgba(40, 44, 52, 0.5)",
+      }}
+    >
+      <Box
         sx={{
-          boxShadow: "none",
-          borderRadius: "48px",
-          mx: "auto",
-          mt: "16px",
+          position: "fixed",
+          zIndex: "1",
+          bottom: 48,
+          left: 0,
+          right: 0,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "rgba(30, 30, 47, 0.02)",
+          borderRadius: "20px",
+          padding: "10px 20px",
+          boxShadow: "0px -10px 20px rgba(0, 0, 0, 0.8)",
+          margin: "0 auto",
+          width: "fit-content",
         }}
       >
-        <Container>
-          <Box
+        {icons.map((item, index) => (
+          <IconButton
+            key={index}
             sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
+              margin: "0 10px",
+              color: item.selected ? "#0af" : "#ccc",
+              backgroundColor: item.selected ? "#0af1" : "transparent",
+              borderRadius: "50%",
+              "&:hover": {
+                backgroundColor: item.selected
+                  ? "#0af1"
+                  : "rgba(255, 255, 255, 0.1)",
+                color: "#0af",
+              },
+              padding: "12px",
+              transition: "all 0.3s",
             }}
           >
-            <IconButton
-              color="secondary"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2, display: { sm: "none" } }}
-            >
-              <MenuOpenIcon />
-            </IconButton>
-            <Typography
-              variant="h5"
-              component="div"
-              sx={{
-                flexGrow: 1,
-                display: { xs: "none", sm: "block" },
-                color: "#161719",
-              }}
-            >
-              Rakib{" "}
-              <Typography
-                component="span"
-                sx={{ color: "#FF8F00", fontSize: "24px" }}
-              >
-                Mahmud
-              </Typography>
-            </Typography>
-            <Box sx={{ display: { xs: "none", sm: "block" }, flexGrow: 1 }}>
-              {navItems.map((item) => (
-                <Button
-                  key={item}
-                  sx={{
-                    color: "#161719",
-                    textTransform: "none",
-                    fontSize: "16px",
-                    marginRight: "20px",
-                  }}
-                >
-                  {item}
-                </Button>
-              ))}
-            </Box>
-            <Box sx={{ flexGrow: 1 }}>
-              <button
-                style={{
-                  backgroundColor: "#939185",
-                  color: "#fff",
-                  textTransform: "none",
-                  border: "0px",
-                  borderRadius: "20px",
-                  padding: "8px 16px",
-                }}
-              >
-                Download CV
-              </button>
-            </Box>
-          </Box>
-        </Container>
-      </AppBar>
-      <nav>
-        <Drawer
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true,
-          }}
-          sx={{
-            display: { xs: "block", sm: "none" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: drawerWidth,
-            },
-          }}
-        >
-          {drawer}
-        </Drawer>
-      </nav>
-      <Box component="main" sx={{ p: 3 }}>
-        <Toolbar />
+            {item.icon}
+          </IconButton>
+        ))}
       </Box>
-    </Box>
+    </Container>
   );
 };

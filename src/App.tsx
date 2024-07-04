@@ -12,14 +12,14 @@ import Footer from "./pages/Footer";
 
 function App() {
   return (
-    <Box>
+    <Box sx={{ bgcolor: "#1f1f38" }}>
+      <Navbar />
       <Box
         sx={{
           backgroundImage: `url(${bannerImage})`,
           backgroundSize: "cover",
         }}
       >
-        <Navbar />
         <Banner />
       </Box>
       <About />

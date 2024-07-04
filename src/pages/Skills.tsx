@@ -23,7 +23,7 @@ const Skills = () => {
         <Marquee
           gradient
           gradientWidth={100}
-          gradientColor="rgb(248, 251, 253)"
+          gradientColor="#1f1f38"
           pauseOnHover
         >
           <Box
@@ -49,6 +49,7 @@ const Skills = () => {
                   py: 1,
                   px: 4,
                   ml: 6,
+                  background: "rgba(255, 255, 255, 0.1)",
                   borderRadius: 3,
                   "&:hover": {
                     transform: "scale(1.05)",

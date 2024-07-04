@@ -36,7 +36,7 @@ const Blog = () => {
           alignItems="center"
           borderRadius={8}
           p={3}
-          style={{ backgroundColor: "#f5f5f5" }}
+          style={{ background: "rgba(255, 255, 255, 0.1)" }}
         >
           {projects?.data?.map((project: TProject) => (
             <Grid key={project?._id} item xs={12} md={6}>

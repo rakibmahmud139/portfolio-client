@@ -48,7 +48,13 @@ const Project = () => {
                   backdropFilter: "blur(10px)",
                   WebkitBackdropFilter: "blur(10px)",
                   border: "1px solid rgba(255, 255, 255, 0.2)",
+                  transition: "transform 0.5s",
                   overflow: "hidden",
+                  "&:hover": {
+                    backgroundColor: "#1f1f38",
+                    border: "2px solid #FF8F00",
+                    transform: "scale(1.1)",
+                  },
                 }}
               >
                 <CardMedia
@@ -59,8 +65,6 @@ const Project = () => {
                     width: "24rem",
                     height: "16rem",
                     borderRadius: 2,
-                    transition: "transform 0.5s",
-                    "&:hover": { transform: "scale(1.1)" },
                   }}
                 />
                 <CardContent>

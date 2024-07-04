@@ -1,20 +1,19 @@
-import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import {
   Box,
-  Container,
   Button,
-  Typography,
-  TextField,
+  Container,
   Grid,
+  TextField,
+  Typography,
 } from "@mui/material";
+import { useRef } from "react";
+import { toast } from "sonner";
 import emailImg from "../assets/email-svgrepo-com.svg";
-import mobileImg from "../assets/mobile-svgrepo-com.svg";
 import fbImg from "../assets/facebook-svgrepo-com.svg";
 import instImg from "../assets/instagram-svgrepo-com.svg";
 import linkImg from "../assets/linkedin-svgrepo-com.svg";
-import { toast } from "sonner";
-import bgImg from "../assets/836584_preview-removebg-preview.png";
+import mobileImg from "../assets/mobile-svgrepo-com.svg";
 
 const Contact = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -47,11 +46,6 @@ const Contact = () => {
     <Box
       sx={{
         mt: "72px",
-        backgroundImage: `url(${bgImg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
       }}
     >
       <Typography
