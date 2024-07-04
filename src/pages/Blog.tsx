@@ -16,28 +16,27 @@ const Blog = () => {
   const { data: projects } = useGetAllProjectsQuery({});
 
   return (
-    <Box sx={{ mt: "72px" }}>
+    <div id="blog" style={{ marginTop: "96px" }}>
       <Typography
         component="h1"
         variant="h4"
         sx={{
           textAlign: "center",
-          color: "#373A40",
+          color: "#FF8F00",
+          mb: "48px",
         }}
       >
         My Blogs
       </Typography>
-      <Container>
-        <Grid
-          container
-          spacing={4}
-          marginTop="48px"
-          justifyContent="center"
-          alignItems="center"
-          borderRadius={8}
-          p={3}
-          style={{ background: "rgba(255, 255, 255, 0.1)" }}
-        >
+      <Container
+        sx={{
+          background: "rgba(255, 255, 255, 0.1)",
+          borderRadius: "48px",
+          pt: "24px",
+          pb: "24px",
+        }}
+      >
+        <Grid container spacing={4} justifyContent="center" alignItems="center">
           {projects?.data?.map((project: TProject) => (
             <Grid key={project?._id} item xs={12} md={6}>
               <Card
@@ -51,6 +50,11 @@ const Blog = () => {
                   overflow: "hidden",
                   width: "100%",
                   maxWidth: 360,
+                  transition: "transform 0.5s",
+                  "&:hover": {
+                    border: "2px solid #FF8F00",
+                    transform: "scale(1.05)",
+                  },
                   m: 2,
                   mx: "auto",
                 }}
@@ -119,7 +123,7 @@ const Blog = () => {
           ))}
         </Grid>
       </Container>
-    </Box>
+    </div>
   );
 };
 

@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import { useGetAllProjectsQuery } from "../redux/features/projectApi";
 import { TProject } from "../types";
+import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 
 const Project = () => {
   const { data: projects } = useGetAllProjectsQuery({});
@@ -24,14 +25,14 @@ const Project = () => {
   };
 
   return (
-    <Box sx={{ pt: "72px" }}>
+    <div id="project" style={{ paddingTop: "96px" }}>
       <Typography
         component="h1"
         variant="h4"
         sx={{
           textAlign: "center",
           marginBottom: "48px",
-          color: "#373A40",
+          color: "#FF8F00",
         }}
       >
         Recent Projects
@@ -42,18 +43,18 @@ const Project = () => {
             <Grid key={project?._id} item xs={12} md={4}>
               <Card
                 sx={{
-                  boxShadow: 3,
                   borderRadius: 2,
                   background: "rgba(255, 255, 255, 0.1)",
                   backdropFilter: "blur(10px)",
                   WebkitBackdropFilter: "blur(10px)",
                   border: "1px solid rgba(255, 255, 255, 0.2)",
                   transition: "transform 0.5s",
+                  boxShadow: "0px -10px 20px rgba(0, 0, 0, 0.8)",
                   overflow: "hidden",
                   "&:hover": {
                     backgroundColor: "#1f1f38",
                     border: "2px solid #FF8F00",
-                    transform: "scale(1.1)",
+                    transform: "scale(1.03)",
                   },
                 }}
               >
@@ -107,7 +108,7 @@ const Project = () => {
                   </Button>
                   <Button
                     variant="contained"
-                    onClick={() => handleCode(project?.repositoryURL)}
+                    endIcon={<ArrowCircleRightIcon />}
                     sx={{
                       bgcolor: "#939185",
                       mt: 2,
@@ -119,7 +120,12 @@ const Project = () => {
                       "&:hover": { transform: "scale(1.05)" },
                     }}
                   >
-                    Details
+                    <a
+                      href={`/project/${project?._id}`}
+                      style={{ textDecoration: "none" }}
+                    >
+                      Details
+                    </a>
                   </Button>
                 </CardActions>
               </Card>
@@ -127,7 +133,7 @@ const Project = () => {
           ))}
         </Grid>
       </Container>
-    </Box>
+    </div>
   );
 };
 

@@ -30,109 +30,116 @@ const services = [
 
 const About = () => {
   return (
-    <Box
-      sx={{
-        backgroundImage: `url(${bannerImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        pt: "72px",
-        pb: "72px",
-      }}
-    >
-      <Container
-        maxWidth="lg"
+    <div id="about">
+      <Box
         sx={{
-          backgroundColor: "rgba(179, 200, 207, 0.8)",
-          borderRadius: "24px",
-          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-          pt: "48px",
-          pb: "48px",
+          backgroundImage: `url(${bannerImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          pt: "96px",
+          pb: "72px",
         }}
       >
-        <Box>
-          <Typography
-            component="h1"
-            variant="h4"
-            sx={{
-              textAlign: "center",
-              marginBottom: "32px",
-              color: "#373A40",
-            }}
-          >
-            About Me
-          </Typography>
-          <Typography
-            sx={{
-              textAlign: "center",
-              px: { md: "64px" },
-              color: "#686D76",
-              marginBottom: "32px",
-            }}
-          >
-            Hi, I am Rakib Mahmud. A passionate web developer with a knack for
-            crafting dynamic and user-friendly web experiences. I thrive on
-            turning creative ideas into functional, aesthetically pleasing
-            websites and web applications. I love coding. I am interested in
-            learning new technology. I believe that no one can be successful
-            without hard work and dedication. I want to join a professional life
-            to gain exposure, confidence, and a sense of achievement.
-          </Typography>
-          <Typography
-            component="h1"
-            variant="h5"
-            sx={{
-              textAlign: "center",
-              px: "64px",
-              color: "#373A40",
-              marginBottom: "32px",
-            }}
-          >
-            Services I Offer
-          </Typography>
-          <Container maxWidth="lg">
-            <Box
+        <Container
+          maxWidth="lg"
+          sx={{
+            backgroundColor: "rgba(179, 200, 207, 0.8)",
+            borderRadius: "24px",
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+            pt: "48px",
+            pb: "48px",
+          }}
+        >
+          <Box>
+            <Typography
+              component="h1"
+              variant="h4"
               sx={{
                 textAlign: "center",
-                display: { xs: "block", md: "flex" },
-                justifyContent: "space-evenly",
+                marginBottom: "48px",
+                color: "#FF8F00",
               }}
             >
-              {services?.map((service) => (
-                <Box
-                  key={service?.title}
-                  sx={{
-                    p: "16px",
-                    background: service?.bgColor,
-                    borderRadius: "24px",
-                    mb: { xs: "24px" },
-                    boxShadow: "0 16px 24px rgba(0, 0, 0, 0.1)",
-                  }}
-                >
-                  <img src={service?.icon} alt="fullStackImg" width="32px" />
-                  <Typography
-                    component="h1"
-                    variant="h6"
-                    sx={{ color: "#373A40" }}
+              About Me
+            </Typography>
+            <Typography
+              sx={{
+                textAlign: "center",
+                px: { md: "64px" },
+                color: "#686D76",
+                marginBottom: "32px",
+              }}
+            >
+              Hi, I am Rakib Mahmud. A passionate web developer with a knack for
+              crafting dynamic and user-friendly web experiences. I thrive on
+              turning creative ideas into functional, aesthetically pleasing
+              websites and web applications. I love coding. I am interested in
+              learning new technology. I believe that no one can be successful
+              without hard work and dedication. I want to join a professional
+              life to gain exposure, confidence, and a sense of achievement.
+            </Typography>
+            <Typography
+              component="h1"
+              variant="h5"
+              sx={{
+                textAlign: "center",
+                px: "64px",
+                color: "#373A40",
+                marginBottom: "32px",
+              }}
+            >
+              Services I Offer
+            </Typography>
+            <Container maxWidth="lg">
+              <Box
+                sx={{
+                  textAlign: "center",
+                  display: { xs: "block", md: "flex" },
+                  justifyContent: "space-evenly",
+                }}
+              >
+                {services?.map((service) => (
+                  <Box
+                    key={service?.title}
+                    sx={{
+                      p: "16px",
+                      background: service?.bgColor,
+                      borderRadius: "24px",
+                      mb: { xs: "24px" },
+                      boxShadow: "0 16px 24px rgba(0, 0, 0, 0.1)",
+                      transition: "transform 0.5s",
+                      "&:hover": {
+                        border: "2px solid #FF8F00",
+                        transform: "scale(1.1)",
+                      },
+                    }}
                   >
-                    {service?.title}
-                  </Typography>
-                  <Typography
-                    sx={{ color: "#686D76", width: "200px", mx: "auto" }}
-                  >
-                    {service?.describe}
-                  </Typography>
-                </Box>
-              ))}
-            </Box>
-          </Container>
-        </Box>
-      </Container>
-    </Box>
+                    <img src={service?.icon} alt="fullStackImg" width="32px" />
+                    <Typography
+                      component="h1"
+                      variant="h6"
+                      sx={{ color: "#373A40" }}
+                    >
+                      {service?.title}
+                    </Typography>
+                    <Typography
+                      sx={{ color: "#686D76", width: "200px", mx: "auto" }}
+                    >
+                      {service?.describe}
+                    </Typography>
+                  </Box>
+                ))}
+              </Box>
+            </Container>
+          </Box>
+        </Container>
+      </Box>
+    </div>
   );
 };
 

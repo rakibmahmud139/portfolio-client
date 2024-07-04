@@ -1,4 +1,5 @@
 import emailjs from "@emailjs/browser";
+import CallIcon from "@mui/icons-material/Call";
 import {
   Box,
   Button,
@@ -13,7 +14,6 @@ import emailImg from "../assets/email-svgrepo-com.svg";
 import fbImg from "../assets/facebook-svgrepo-com.svg";
 import instImg from "../assets/instagram-svgrepo-com.svg";
 import linkImg from "../assets/linkedin-svgrepo-com.svg";
-import mobileImg from "../assets/mobile-svgrepo-com.svg";
 
 const Contact = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -43,9 +43,10 @@ const Contact = () => {
   };
 
   return (
-    <Box
-      sx={{
-        mt: "72px",
+    <div
+      id="contact"
+      style={{
+        marginTop: "96px",
       }}
     >
       <Typography
@@ -54,7 +55,7 @@ const Contact = () => {
         sx={{
           textAlign: "center",
           marginBottom: "48px",
-          color: "#373A40",
+          color: "#FF8F00",
         }}
       >
         Contact Me
@@ -68,7 +69,7 @@ const Contact = () => {
           alignContent="center"
         >
           <Grid item xs={12} md={5}>
-            <Typography component="h1" variant="h5" color="#373A40">
+            <Typography component="h1" variant="h5" color="#FF8F00">
               Get In Touch
             </Typography>
             <Box display="flex" alignItems="center" gap={2} mt={6}>
@@ -79,13 +80,13 @@ const Contact = () => {
               </Box>
             </Box>
             <Box display="flex" alignItems="center" gap={2} mt={2}>
-              <img src={mobileImg} alt="email" width="24px" />
+              <CallIcon sx={{ mr: 1, fontSize: "24px" }} />
               <Box>
                 <Typography>Call Me</Typography>
                 <Typography>+8801961928243</Typography>
               </Box>
             </Box>
-            <Typography component="h6" color="#373A40" mt={6} mb={2}>
+            <Typography component="h6" color="#FF8F00" mt={6} mb={2}>
               FOLLOW ME
             </Typography>
             <Box display="flex" alignItems="center" gap={2}>
@@ -165,7 +166,7 @@ const Contact = () => {
           </Grid>
         </Grid>
       </Container>
-    </Box>
+    </div>
   );
 };
 

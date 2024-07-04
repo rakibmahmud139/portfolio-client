@@ -7,14 +7,14 @@ const Skills = () => {
   const { data: skills } = useGetAllSkillsQuery({});
 
   return (
-    <Box sx={{ mt: "72px" }}>
+    <div id="skill" style={{ marginTop: "96px" }}>
       <Typography
         component="h1"
         variant="h4"
         sx={{
           textAlign: "center",
-          marginBottom: "32px",
-          color: "#373A40",
+          marginBottom: "48px",
+          color: "#FF8F00",
         }}
       >
         Professional Skills
@@ -68,7 +68,7 @@ const Skills = () => {
           </Box>
         </Marquee>
       </Container>
-    </Box>
+    </div>
   );
 };
 

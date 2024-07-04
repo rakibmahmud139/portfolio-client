@@ -15,7 +15,7 @@ const Footer = () => {
         color: "#fff",
         py: 4,
         px: 2,
-        mt: "72px",
+        mt: "96px",
       }}
     >
       <Box
@@ -65,7 +65,7 @@ const Footer = () => {
                     width="24px"
                     style={{ marginLeft: "24px", marginRight: "24px" }}
                   />
-                </a>{" "}
+                </a>
               </IconButton>
               <IconButton>
                 <a href="https://www.instagram.com/rakib_mahmud_2/">

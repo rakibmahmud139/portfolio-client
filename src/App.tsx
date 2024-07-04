@@ -23,9 +23,7 @@ function App() {
         <Banner />
       </Box>
       <About />
-      <Box>
-        <Project />
-      </Box>
+      <Project />
       <Skills />
       <Blog />
       <Contact />
