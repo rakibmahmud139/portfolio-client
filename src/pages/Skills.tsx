@@ -47,7 +47,7 @@ const Skills = () => {
                 sx={{
                   transition: "transform 0.5s",
                   py: 1,
-                  px: 1,
+                  px: 4,
                   ml: 6,
                   borderRadius: 3,
                   "&:hover": {

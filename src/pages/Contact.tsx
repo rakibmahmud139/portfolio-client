@@ -14,6 +14,7 @@ import fbImg from "../assets/facebook-svgrepo-com.svg";
 import instImg from "../assets/instagram-svgrepo-com.svg";
 import linkImg from "../assets/linkedin-svgrepo-com.svg";
 import { toast } from "sonner";
+import bgImg from "../assets/836584_preview-removebg-preview.png";
 
 const Contact = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -43,7 +44,16 @@ const Contact = () => {
   };
 
   return (
-    <Box sx={{ mt: "72px" }}>
+    <Box
+      sx={{
+        mt: "72px",
+        backgroundImage: `url(${bgImg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+      }}
+    >
       <Typography
         component="h1"
         variant="h4"
