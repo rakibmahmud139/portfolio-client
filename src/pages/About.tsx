@@ -3,6 +3,10 @@ import bannerImage from "../assets/836584_file.svg";
 import fullStackImg from "../assets/computer.png";
 import frontEndImg from "../assets/front-end_8167797.png";
 import backEndImg from "../assets/web-development_8389752.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+AOS.init();
 
 const services = [
   {
@@ -57,17 +61,24 @@ const About = () => {
         >
           <Box>
             <Typography
+              data-aos="fade-up-right"
+              data-aos-duration="2000"
+              data-aos-easing="linear"
               component="h1"
               variant="h4"
               sx={{
                 textAlign: "center",
                 marginBottom: "48px",
                 color: "#FF8F00",
+                fontFamily: "sans-serif",
               }}
             >
               About Me
             </Typography>
             <Typography
+              data-aos="fade-up-left"
+              data-aos-duration="2000"
+              data-aos-easing="linear"
               sx={{
                 textAlign: "center",
                 px: { md: "64px" },
@@ -84,22 +95,29 @@ const About = () => {
               life to gain exposure, confidence, and a sense of achievement.
             </Typography>
             <Typography
+              data-aos="fade-down-right"
+              data-aos-duration="2000"
+              data-aos-easing="linear"
               component="h1"
               variant="h4"
               sx={{
                 textAlign: "center",
                 px: "64px",
-                color: "#373A40",
+                color: "#FF8F00",
                 marginBottom: "32px",
+                fontFamily: "sans-serif",
               }}
             >
               Education
             </Typography>
             <Box
+              data-aos="fade-down-left"
+              data-aos-duration="2000"
+              data-aos-easing="linear"
               sx={{
                 textAlign: "center",
                 mb: "64px",
-                border: "2px solid #373a40",
+                border: "1px solid #373a40",
                 p: "8px",
               }}
             >
@@ -112,6 +130,9 @@ const About = () => {
             </Box>
 
             <Typography
+              data-aos="fade-down"
+              data-aos-duration="2000"
+              data-aos-easing="linear"
               component="h1"
               variant="h5"
               sx={{
@@ -119,6 +140,7 @@ const About = () => {
                 px: "64px",
                 color: "#FF8F00",
                 marginBottom: "32px",
+                fontFamily: "sans-serif",
               }}
             >
               Services I Offer
@@ -133,6 +155,9 @@ const About = () => {
               >
                 {services?.map((service) => (
                   <Box
+                    data-aos="fade-up"
+                    data-aos-easing="linear"
+                    data-aos-duration="2000"
                     key={service?.title}
                     sx={{
                       p: "16px",

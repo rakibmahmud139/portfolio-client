@@ -2,6 +2,10 @@ import { Container, Typography, Box, Button } from "@mui/material";
 import avatar from "../assets/2f3f6777-cfb5-4293-bc2c-0f5c4cebe90a-removebg-preview.png";
 import { Link } from "react-scroll";
 import DownloadForOfflineIcon from "@mui/icons-material/DownloadForOffline";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+AOS.init();
 
 const Banner = () => {
   return (
@@ -18,11 +22,16 @@ const Banner = () => {
             textAlign: "left",
           }}
         >
-          <Box>
+          <Box
+            data-aos="fade-right"
+            data-aos-duration="2000"
+            data-aos-easing="linear"
+          >
             <Typography
               sx={{
                 color: "#FF8F00",
                 fontSize: { xs: "28px", sm: "28px", md: "36px" },
+                fontFamily: "sans-serif",
               }}
             >
               Hi,
@@ -32,6 +41,7 @@ const Banner = () => {
               sx={{
                 color: "#fff",
                 fontSize: { xs: "28px", sm: "32px", md: "48px" },
+                fontFamily: "sans-serif",
               }}
             >
               I'm Rakib Mahmud
@@ -41,6 +51,7 @@ const Banner = () => {
               sx={{
                 color: "#fff",
                 fontSize: { xs: "28px", sm: "32px", md: "48px" },
+                fontFamily: "sans-serif",
               }}
             >
               Full Stack Developer
@@ -107,7 +118,12 @@ const Banner = () => {
               </a>
             </Box>
           </Box>
-          <Box sx={{ mt: { xs: "24px", md: "0" } }}>
+          <Box
+            data-aos="fade-left"
+            data-aos-duration="2000"
+            data-aos-easing="linear"
+            sx={{ mt: { xs: "24px", md: "0" } }}
+          >
             <img
               src={avatar}
               alt="avatar"

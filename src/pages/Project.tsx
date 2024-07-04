@@ -1,17 +1,22 @@
+import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import {
-  Box,
+  Button,
   Card,
+  CardActions,
   CardContent,
   CardMedia,
-  Grid,
   Container,
+  Grid,
   Typography,
-  CardActions,
-  Button,
 } from "@mui/material";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { useGetAllProjectsQuery } from "../redux/features/projectApi";
 import { TProject } from "../types";
-import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+
+AOS.init();
 
 const Project = () => {
   const { data: projects } = useGetAllProjectsQuery({});
@@ -27,12 +32,16 @@ const Project = () => {
   return (
     <div id="project" style={{ paddingTop: "96px" }}>
       <Typography
+        data-aos="fade-down"
+        data-aos-duration="2000"
+        data-aos-easing="linear"
         component="h1"
         variant="h4"
         sx={{
           textAlign: "center",
           marginBottom: "48px",
           color: "#FF8F00",
+          fontFamily: "sans-serif",
         }}
       >
         Recent Projects
@@ -42,6 +51,9 @@ const Project = () => {
           {projects?.data?.map((project: TProject) => (
             <Grid key={project?._id} item xs={12} md={4}>
               <Card
+                data-aos="fade-up"
+                data-aos-duration="2000"
+                data-aos-easing="linear"
                 sx={{
                   borderRadius: 2,
                   background: "rgba(255, 255, 255, 0.1)",
@@ -75,6 +87,7 @@ const Project = () => {
                 </CardContent>
                 <CardActions>
                   <Button
+                    endIcon={<OpenInNewIcon />}
                     variant="contained"
                     onClick={() => handleDemo(project?.liveLink)}
                     sx={{
@@ -91,6 +104,7 @@ const Project = () => {
                     Demo
                   </Button>
                   <Button
+                    endIcon={<GitHubIcon />}
                     variant="outlined"
                     color="primary"
                     onClick={() => handleCode(project?.repositoryURL)}

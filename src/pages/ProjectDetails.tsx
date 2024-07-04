@@ -1,17 +1,21 @@
-import { Navbar } from "../components/Navbar";
-import Footer from "./Footer";
 import {
+  Box,
+  Card,
+  CardContent,
+  CardMedia,
   Container,
   Grid,
-  Typography,
-  Card,
-  CardMedia,
-  CardContent,
-  Box,
   Link,
+  Typography,
 } from "@mui/material";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { useParams } from "react-router-dom";
 import { useGetSingleProjectsQuery } from "../redux/features/projectApi";
+import Footer from "./Footer";
+import "aos/dist/aos.css";
+
+AOS.init();
 
 const ProjectDetails = () => {
   const { id } = useParams();
@@ -22,12 +26,23 @@ const ProjectDetails = () => {
     <Box sx={{ bgcolor: "#1f1f38" }}>
       <Container>
         <Box py={4}>
-          <Typography variant="h4" align="center" color="#FF8F00">
+          <Typography
+            align="center"
+            color="#FF8F00"
+            sx={{
+              fontSize: { xs: "24px", md: "32px" },
+              fontFamily: "sans-serif",
+            }}
+          >
             {project?.data?.projectTitle}
           </Typography>
           <Grid container spacing={4} mt="48px">
             <Grid item xs={12} md={6}>
-              <Card>
+              <Card
+                data-aos="fade-up-left"
+                data-aos-easing="linear"
+                data-aos-duration="2000"
+              >
                 <CardMedia
                   component="img"
                   alt={project?.data?.projectTitle}
@@ -37,7 +52,12 @@ const ProjectDetails = () => {
               </Card>
             </Grid>
             <Grid item xs={12} md={6}>
-              <Card sx={{ height: "400px" }}>
+              <Card
+                data-aos="zoom-in-up"
+                data-aos-easing="linear"
+                data-aos-duration="2000"
+                sx={{ height: "400px" }}
+              >
                 <CardContent>
                   <Typography variant="h6">Description</Typography>
                   <Typography variant="body2" color="#686D76" paragraph>

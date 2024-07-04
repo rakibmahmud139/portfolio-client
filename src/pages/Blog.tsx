@@ -9,8 +9,12 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { useGetAllBlogsQuery } from "../redux/features/blogApi";
-import { TBlog, TProject } from "../types";
+import { TBlog } from "../types";
+
+AOS.init();
 
 const Blog = () => {
   const { data: blogs } = useGetAllBlogsQuery({});
@@ -18,12 +22,16 @@ const Blog = () => {
   return (
     <div id="blog" style={{ marginTop: "96px" }}>
       <Typography
+        data-aos="zoom-out-right"
+        data-aos-easing="linear"
+        data-aos-duration="2000"
         component="h1"
         variant="h4"
         sx={{
           textAlign: "center",
           color: "#FF8F00",
           mb: "48px",
+          fontFamily: "sans-serif",
         }}
       >
         My Blogs
@@ -40,6 +48,9 @@ const Blog = () => {
           {blogs?.data?.map((blog: TBlog) => (
             <Grid key={blog?._id} item xs={12} md={6}>
               <Card
+                data-aos="zoom-out-left"
+                data-aos-easing="linear"
+                data-aos-duration="2000"
                 sx={{
                   boxShadow: 16,
                   borderRadius: 6,

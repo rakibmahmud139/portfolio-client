@@ -2,6 +2,10 @@ import { Box, Container, Typography } from "@mui/material";
 import Marquee from "react-fast-marquee";
 import { useGetAllSkillsQuery } from "../redux/features/skillApi";
 import { TSkill } from "../types";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+AOS.init();
 
 const Skills = () => {
   const { data: skills } = useGetAllSkillsQuery({});
@@ -9,12 +13,16 @@ const Skills = () => {
   return (
     <div id="skill" style={{ marginTop: "96px" }}>
       <Typography
+        data-aos="fade-right"
+        data-aos-easing="linear"
+        data-aos-duration="2000"
         component="h1"
         variant="h4"
         sx={{
           textAlign: "center",
           marginBottom: "48px",
           color: "#FF8F00",
+          fontFamily: "sans-serif",
         }}
       >
         Professional Skills
@@ -43,6 +51,9 @@ const Skills = () => {
           >
             {skills?.data?.map((skill: TSkill) => (
               <Box
+                data-aos="fade-left"
+                data-aos-easing="linear"
+                data-aos-duration="2000"
                 key={skill._id}
                 sx={{
                   transition: "transform 0.5s",

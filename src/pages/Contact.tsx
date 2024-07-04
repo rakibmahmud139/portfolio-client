@@ -14,6 +14,10 @@ import emailImg from "../assets/email-svgrepo-com.svg";
 import fbImg from "../assets/facebook-svgrepo-com.svg";
 import instImg from "../assets/instagram-svgrepo-com.svg";
 import linkImg from "../assets/linkedin-svgrepo-com.svg";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+AOS.init();
 
 const Contact = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -50,12 +54,16 @@ const Contact = () => {
       }}
     >
       <Typography
+        data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="2000"
         component="h1"
         variant="h4"
         sx={{
           textAlign: "center",
           marginBottom: "48px",
           color: "#FF8F00",
+          fontFamily: "sans-serif",
         }}
       >
         Contact Me
@@ -69,27 +77,67 @@ const Contact = () => {
           alignContent="center"
         >
           <Grid item xs={12} md={5}>
-            <Typography component="h1" variant="h5" color="#FF8F00">
+            <Typography
+              data-aos="fade-up"
+              data-aos-easing="linear"
+              data-aos-duration="2000"
+              component="h1"
+              variant="h5"
+              color="#FF8F00"
+              sx={{ fontFamily: "sans-serif" }}
+            >
               Get In Touch
             </Typography>
-            <Box display="flex" alignItems="center" gap={2} mt={6}>
+            <Box
+              data-aos="fade-right"
+              data-aos-easing="linear"
+              data-aos-duration="2000"
+              display="flex"
+              alignItems="center"
+              gap={2}
+              mt={6}
+            >
               <img src={emailImg} alt="email" width="24px" />
               <Box>
                 <Typography>Talk To Me</Typography>
                 <Typography>hasansaikat74@gamil.com</Typography>
               </Box>
             </Box>
-            <Box display="flex" alignItems="center" gap={2} mt={2}>
+            <Box
+              data-aos="fade-left"
+              data-aos-easing="linear"
+              data-aos-duration="2000"
+              display="flex"
+              alignItems="center"
+              gap={2}
+              mt={2}
+            >
               <CallIcon sx={{ mr: 1, fontSize: "24px" }} />
               <Box>
                 <Typography>Call Me</Typography>
                 <Typography>+8801961928243</Typography>
               </Box>
             </Box>
-            <Typography component="h6" color="#FF8F00" mt={6} mb={2}>
+            <Typography
+              data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration="2000"
+              component="h6"
+              color="#FF8F00"
+              mt={6}
+              mb={2}
+              sx={{ fontFamily: "sans-serif" }}
+            >
               FOLLOW ME
             </Typography>
-            <Box display="flex" alignItems="center" gap={2}>
+            <Box
+              data-aos="flip-left"
+              data-aos-easing="linear"
+              data-aos-duration="2000"
+              display="flex"
+              alignItems="center"
+              gap={2}
+            >
               <a href="https://www.facebook.com/ishan.mahmud.9849/">
                 <img src={fbImg} alt="facebook" width="24px" />
               </a>
@@ -121,14 +169,27 @@ const Contact = () => {
               }}
             >
               <TextField
+                data-aos="fade-up-left"
+                data-aos-easing="linear"
+                data-aos-duration="2000"
                 required
                 label="First Name"
                 size="small"
                 fullWidth
                 name="from_name"
               />
-              <TextField label="Last Name" size="small" fullWidth />
               <TextField
+                data-aos="fade-up-right"
+                data-aos-easing="linear"
+                data-aos-duration="2000"
+                label="Last Name"
+                size="small"
+                fullWidth
+              />
+              <TextField
+                data-aos="fade-up-right"
+                data-aos-easing="linear"
+                data-aos-duration="2000"
                 required
                 label="Email"
                 size="small"
@@ -136,12 +197,18 @@ const Contact = () => {
                 name="from_email"
               />
               <TextField
+                data-aos="fade-up-left"
+                data-aos-easing="linear"
+                data-aos-duration="2000"
                 label="Phone"
                 size="small"
                 fullWidth
                 name="from_phone"
               />
               <TextField
+                data-aos="fade-up-right"
+                data-aos-easing="linear"
+                data-aos-duration="2000"
                 required
                 label="Message"
                 name="message"
@@ -152,6 +219,9 @@ const Contact = () => {
                 fullWidth
               />
               <Button
+                data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="2000"
                 variant="contained"
                 type="submit"
                 sx={{
