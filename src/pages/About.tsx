@@ -103,10 +103,10 @@ const About = () => {
                 p: "8px",
               }}
             >
-              <Typography sx={{ fontSize: "24px", color: "#FF8F00" }}>
+              <Typography sx={{ fontSize: "24px", color: "#373a40" }}>
                 Bachelor Of Business Administration(BBA) in Accounting(Honours)
               </Typography>
-              <Typography sx={{ fontSize: "20px", color: "#FF8F00" }}>
+              <Typography sx={{ fontSize: "20px", color: "#373a40" }}>
                 Comilla Victoria Govt. Collage
               </Typography>
             </Box>
