@@ -1,19 +1,19 @@
 import {
   Box,
-  Typography,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
   Container,
   Grid,
-  Card,
-  CardMedia,
-  CardContent,
-  CardActions,
-  Button,
+  Typography,
 } from "@mui/material";
-import { useGetAllProjectsQuery } from "../redux/features/projectApi";
-import { TProject } from "../types";
+import { useGetAllBlogsQuery } from "../redux/features/blogApi";
+import { TBlog, TProject } from "../types";
 
 const Blog = () => {
-  const { data: projects } = useGetAllProjectsQuery({});
+  const { data: blogs } = useGetAllBlogsQuery({});
 
   return (
     <div id="blog" style={{ marginTop: "96px" }}>
@@ -37,8 +37,8 @@ const Blog = () => {
         }}
       >
         <Grid container spacing={4} justifyContent="center" alignItems="center">
-          {projects?.data?.map((project: TProject) => (
-            <Grid key={project?._id} item xs={12} md={6}>
+          {blogs?.data?.map((blog: TBlog) => (
+            <Grid key={blog?._id} item xs={12} md={6}>
               <Card
                 sx={{
                   boxShadow: 16,
@@ -61,7 +61,7 @@ const Blog = () => {
               >
                 <CardMedia
                   component="img"
-                  image={project?.projectImage}
+                  image={blog?.image}
                   alt="projectImg"
                   sx={{
                     width: "100%",
@@ -81,7 +81,7 @@ const Blog = () => {
                         borderRadius: 1,
                       }}
                     >
-                      July 19, 2022
+                      {blog?.publicationDate}
                     </Typography>
                     <Typography
                       variant="caption"
@@ -91,15 +91,14 @@ const Blog = () => {
                         borderRadius: 1,
                       }}
                     >
-                      Design
+                      {blog?.platform}
                     </Typography>
                   </Box>
                   <Typography variant="h6" component="div" mb={2}>
-                    {project?.projectTitle}
+                    {blog?.title}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed
-                    Do Eiusmod Tempor Incididunt Ut Labore.
+                  <Typography variant="body2" color="#686D76">
+                    {blog?.summary}
                   </Typography>
                 </CardContent>
                 <CardActions sx={{ justifyContent: "space-around" }}>
@@ -115,7 +114,7 @@ const Blog = () => {
                       "&:hover": { transform: "scale(1.05)" },
                     }}
                   >
-                    Details
+                    Continue
                   </Button>
                 </CardActions>
               </Card>

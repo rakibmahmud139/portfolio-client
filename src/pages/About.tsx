@@ -85,11 +85,39 @@ const About = () => {
             </Typography>
             <Typography
               component="h1"
-              variant="h5"
+              variant="h4"
               sx={{
                 textAlign: "center",
                 px: "64px",
                 color: "#373A40",
+                marginBottom: "32px",
+              }}
+            >
+              Education
+            </Typography>
+            <Box
+              sx={{
+                textAlign: "center",
+                mb: "64px",
+                border: "2px solid #373a40",
+                p: "8px",
+              }}
+            >
+              <Typography sx={{ fontSize: "24px", color: "#FF8F00" }}>
+                Bachelor Of Business Administration(BBA) in Accounting(Honours)
+              </Typography>
+              <Typography sx={{ fontSize: "20px", color: "#FF8F00" }}>
+                Comilla Victoria Govt. Collage
+              </Typography>
+            </Box>
+
+            <Typography
+              component="h1"
+              variant="h5"
+              sx={{
+                textAlign: "center",
+                px: "64px",
+                color: "#FF8F00",
                 marginBottom: "32px",
               }}
             >

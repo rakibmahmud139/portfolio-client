@@ -31,28 +31,28 @@ const ProjectDetails = () => {
                 <CardMedia
                   component="img"
                   alt={project?.data?.projectTitle}
-                  height="324px"
+                  height="400px"
                   image={project?.data?.projectImage}
                 />
               </Card>
             </Grid>
             <Grid item xs={12} md={6}>
-              <Card sx={{ height: "324px" }}>
+              <Card sx={{ height: "400px" }}>
                 <CardContent>
                   <Typography variant="h6">Description</Typography>
-                  <Typography variant="body2" paragraph>
+                  <Typography variant="body2" color="#686D76" paragraph>
                     {project?.data?.description}
                   </Typography>
                   <Typography variant="h6">
                     Technologies Used (Frontend)
                   </Typography>
-                  <Typography variant="body2" paragraph>
+                  <Typography variant="body2" color="#686D76" paragraph>
                     {project?.data?.usedTechnologiesFrontend.join(", ")}
                   </Typography>
                   <Typography variant="h6">
                     Technologies Used (Backend)
                   </Typography>
-                  <Typography variant="body2" paragraph>
+                  <Typography variant="body2" color="#686D76" paragraph>
                     {project?.data?.usedTechnologiesBackend.join(", ")}
                   </Typography>
                   <Typography variant="h6">Links</Typography>

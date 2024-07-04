@@ -26,3 +26,15 @@ export type TProject = {
   backEndGitHubLink: string;
   liveLink: string;
 };
+
+export type TBlog = {
+  _id: string;
+  title: string;
+  publicationDate: string;
+  url: string;
+  summary: string;
+  tags: string[];
+  platform: string;
+  image: string;
+  content: string;
+};
