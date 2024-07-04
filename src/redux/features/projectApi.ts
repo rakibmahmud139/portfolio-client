@@ -9,7 +9,15 @@ const projectApi = baseApi.injectEndpoints({
       }),
       providesTags: ["project"],
     }),
+
+    getSingleProjects: builder.query({
+      query: (id) => ({
+        url: `/projects/${id}`,
+        method: "GET",
+      }),
+      providesTags: ["project"],
+    }),
   }),
 });
 
-export const { useGetAllProjectsQuery } = projectApi;
+export const { useGetAllProjectsQuery, useGetSingleProjectsQuery } = projectApi;

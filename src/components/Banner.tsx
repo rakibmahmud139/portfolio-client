@@ -1,5 +1,7 @@
-import { Container, Typography, Box } from "@mui/material";
+import { Container, Typography, Box, Button } from "@mui/material";
 import avatar from "../assets/2f3f6777-cfb5-4293-bc2c-0f5c4cebe90a-removebg-preview.png";
+import { Link } from "react-scroll";
+import DownloadForOfflineIcon from "@mui/icons-material/DownloadForOffline";
 
 const Banner = () => {
   return (
@@ -63,30 +65,46 @@ const Banner = () => {
                 gap: "12px",
               }}
             >
-              <button
-                style={{
-                  backgroundColor: "#FF8F00",
-                  color: "#fff",
-                  textTransform: "none",
-                  border: "0px",
-                  borderRadius: "20px",
-                  padding: "8px 16px",
-                }}
+              <Link
+                to="project"
+                smooth={true}
+                duration={1000}
+                spy={true}
+                activeClass="active"
               >
-                Projects
-              </button>
-              <button
-                style={{
-                  backgroundColor: "#5C636E",
-                  color: "#fff",
-                  textTransform: "none",
-                  border: "0px",
-                  borderRadius: "20px",
-                  padding: "8px 16px",
-                }}
+                <Button
+                  sx={{
+                    backgroundColor: "#FF8F00",
+                    color: "#fff",
+                    textTransform: "none",
+                    border: "0px",
+                    borderRadius: "20px",
+                    padding: "8px 16px",
+                  }}
+                >
+                  Projects
+                </Button>
+              </Link>
+              <a
+                href="/Rakib-Mahmud-Resume.pdf"
+                download={true}
+                target="_blank"
+                rel="noreferrer"
               >
-                Get In Touch
-              </button>
+                <Button
+                  endIcon={<DownloadForOfflineIcon />}
+                  sx={{
+                    backgroundColor: "#5C636E",
+                    color: "#fff",
+                    textTransform: "none",
+                    border: "0px",
+                    borderRadius: "20px",
+                    padding: "8px 16px",
+                  }}
+                >
+                  Download CV
+                </Button>
+              </a>
             </Box>
           </Box>
           <Box sx={{ mt: { xs: "24px", md: "0" } }}>

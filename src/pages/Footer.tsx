@@ -31,7 +31,7 @@ const Footer = () => {
             <Box>
               <IconButton
                 component="a"
-                href="#"
+                href="/"
                 color="inherit"
                 sx={{ mx: 1, display: "inline-flex", alignItems: "center" }}
               >
