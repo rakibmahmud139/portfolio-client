@@ -60,19 +60,34 @@ const ProjectDetails = () => {
               >
                 <CardContent>
                   <Typography variant="h6">Description</Typography>
-                  <Typography variant="body2" color="#686D76" paragraph>
+                  <Typography
+                    variant="body2"
+                    color="#686D76"
+                    paragraph
+                    sx={{ fontFamily: "serif" }}
+                  >
                     {project?.data?.description}
                   </Typography>
                   <Typography variant="h6">
                     Technologies Used (Frontend)
                   </Typography>
-                  <Typography variant="body2" color="#686D76" paragraph>
+                  <Typography
+                    variant="body2"
+                    color="#686D76"
+                    paragraph
+                    sx={{ fontFamily: "serif" }}
+                  >
                     {project?.data?.usedTechnologiesFrontend.join(", ")}
                   </Typography>
                   <Typography variant="h6">
                     Technologies Used (Backend)
                   </Typography>
-                  <Typography variant="body2" color="#686D76" paragraph>
+                  <Typography
+                    variant="body2"
+                    color="#686D76"
+                    paragraph
+                    sx={{ fontFamily: "serif" }}
+                  >
                     {project?.data?.usedTechnologiesBackend.join(", ")}
                   </Typography>
                   <Typography variant="h6">Links</Typography>
@@ -81,7 +96,11 @@ const ProjectDetails = () => {
                       href={project?.data?.liveLink}
                       target="_blank"
                       rel="noopener"
-                      sx={{ textDecoration: "none", color: "blue" }}
+                      sx={{
+                        textDecoration: "none",
+                        color: "blue",
+                        fontFamily: "serif",
+                      }}
                     >
                       Live Site
                     </Link>
@@ -90,7 +109,12 @@ const ProjectDetails = () => {
                       href={project?.data?.repositoryURL}
                       target="_blank"
                       rel="noopener"
-                      sx={{ textDecoration: "none", mx: "24px", color: "blue" }}
+                      sx={{
+                        textDecoration: "none",
+                        mx: "24px",
+                        color: "blue",
+                        fontFamily: "serif",
+                      }}
                     >
                       Client Repo
                     </Link>
@@ -99,7 +123,11 @@ const ProjectDetails = () => {
                       href={project?.data?.backEndGitHubLink}
                       target="_blank"
                       rel="noopener"
-                      sx={{ textDecoration: "none", color: "blue" }}
+                      sx={{
+                        textDecoration: "none",
+                        color: "blue",
+                        fontFamily: "serif",
+                      }}
                     >
                       Server Repo
                     </Link>

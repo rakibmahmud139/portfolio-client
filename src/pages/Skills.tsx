@@ -73,7 +73,9 @@ const Skills = () => {
                   alt={skill?.skillName}
                   style={{ width: "5rem", margin: "0 auto" }}
                 />
-                <Typography sx={{ mt: 2 }}>{skill?.skillName}</Typography>
+                <Typography sx={{ mt: 2, fontFamily: "serif" }}>
+                  {skill?.skillName}
+                </Typography>
               </Box>
             ))}
           </Box>

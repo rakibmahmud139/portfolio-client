@@ -84,6 +84,7 @@ const About = () => {
                 px: { md: "64px" },
                 color: "#686D76",
                 marginBottom: "32px",
+                fontFamily: "serif",
               }}
             >
               Hi, I am Rakib Mahmud. A passionate web developer with a knack for
@@ -121,10 +122,14 @@ const About = () => {
                 p: "8px",
               }}
             >
-              <Typography sx={{ fontSize: "24px", color: "#373a40" }}>
+              <Typography
+                sx={{ fontSize: "24px", color: "#373a40", fontFamily: "serif" }}
+              >
                 Bachelor Of Business Administration(BBA) in Accounting(Honours)
               </Typography>
-              <Typography sx={{ fontSize: "20px", color: "#373a40" }}>
+              <Typography
+                sx={{ fontSize: "20px", color: "#373a40", fontFamily: "serif" }}
+              >
                 Comilla Victoria Govt. Collage
               </Typography>
             </Box>
@@ -181,7 +186,12 @@ const About = () => {
                       {service?.title}
                     </Typography>
                     <Typography
-                      sx={{ color: "#686D76", width: "200px", mx: "auto" }}
+                      sx={{
+                        color: "#686D76",
+                        width: "200px",
+                        mx: "auto",
+                        fontFamily: "serif",
+                      }}
                     >
                       {service?.describe}
                     </Typography>

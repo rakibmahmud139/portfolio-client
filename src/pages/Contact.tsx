@@ -99,8 +99,10 @@ const Contact = () => {
             >
               <img src={emailImg} alt="email" width="24px" />
               <Box>
-                <Typography>Talk To Me</Typography>
-                <Typography>hasansaikat74@gamil.com</Typography>
+                <Typography sx={{ fontFamily: "serif" }}>Talk To Me</Typography>
+                <Typography sx={{ fontFamily: "serif" }}>
+                  hasansaikat74@gamil.com
+                </Typography>
               </Box>
             </Box>
             <Box
@@ -114,8 +116,10 @@ const Contact = () => {
             >
               <CallIcon sx={{ mr: 1, fontSize: "24px" }} />
               <Box>
-                <Typography>Call Me</Typography>
-                <Typography>+8801961928243</Typography>
+                <Typography sx={{ fontFamily: "serif" }}>Call Me</Typography>
+                <Typography sx={{ fontFamily: "serif" }}>
+                  +8801961928243
+                </Typography>
               </Box>
             </Box>
             <Typography

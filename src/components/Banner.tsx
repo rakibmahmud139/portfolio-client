@@ -61,6 +61,7 @@ const Banner = () => {
                 color: "#fff",
                 mt: "16px",
                 width: { xs: "100%", sm: "420px", md: "520px" },
+                fontFamily: "serif",
               }}
             >
               A passionate web developer with a knack for crafting dynamic and

@@ -90,6 +90,7 @@ const Blog = () => {
                         background: "#FFEEEE",
                         padding: "0.3rem 0.5rem",
                         borderRadius: 1,
+                        fontFamily: "serif",
                       }}
                     >
                       {blog?.publicationDate}
@@ -100,15 +101,25 @@ const Blog = () => {
                         background: "#E0F7FA",
                         padding: "0.3rem 0.5rem",
                         borderRadius: 1,
+                        fontFamily: "serif",
                       }}
                     >
                       {blog?.platform}
                     </Typography>
                   </Box>
-                  <Typography variant="h6" component="div" mb={2}>
+                  <Typography
+                    variant="h6"
+                    component="div"
+                    mb={2}
+                    sx={{ fontFamily: "serif" }}
+                  >
                     {blog?.title}
                   </Typography>
-                  <Typography variant="body2" color="#686D76">
+                  <Typography
+                    variant="body2"
+                    color="#686D76"
+                    sx={{ fontFamily: "serif" }}
+                  >
                     {blog?.summary}
                   </Typography>
                 </CardContent>

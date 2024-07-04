@@ -81,7 +81,11 @@ const Project = () => {
                   }}
                 />
                 <CardContent>
-                  <Typography variant="h5" component="div">
+                  <Typography
+                    variant="h5"
+                    component="div"
+                    sx={{ fontFamily: "serif" }}
+                  >
                     {project?.projectTitle}
                   </Typography>
                 </CardContent>
