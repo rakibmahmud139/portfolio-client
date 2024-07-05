@@ -65,7 +65,11 @@ const Skills = () => {
                   "&:hover": {
                     transform: "scale(1.05)",
                   },
-                  boxShadow: `0 4px 8px 0 ${skill.bgColor}, 0 6px 12px 0 ${skill.bgColor}`,
+                  boxShadow: `0 4px 8px 0 ${
+                    skill?.bgColor ? skill?.bgColor : "#FF8F00"
+                  }, 0 6px 12px 0 ${
+                    skill?.bgColor ? skill?.bgColor : "#FF8F00"
+                  }`,
                 }}
               >
                 <img
