@@ -19,6 +19,17 @@ AOS.init();
 const Blog = () => {
   const { data: blogs } = useGetAllBlogsQuery({});
 
+  console.log(blogs);
+
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-CA");
+  };
+
+  const handleContinueClick = (url: string) => {
+    window.location.href = url;
+  };
+
   return (
     <div id="blog" style={{ marginTop: "96px" }}>
       <Typography
@@ -45,7 +56,7 @@ const Blog = () => {
         }}
       >
         <Grid container spacing={4} justifyContent="center" alignItems="center">
-          {blogs?.data?.map((blog: TBlog) => (
+          {blogs?.data?.slice(0, 4).map((blog: TBlog) => (
             <Grid key={blog?._id} item xs={12} md={6}>
               <Card
                 data-aos="zoom-out-left"
@@ -93,7 +104,7 @@ const Blog = () => {
                         fontFamily: "serif",
                       }}
                     >
-                      {blog?.publicationDate}
+                      {formatDate(blog?.publicationDate)}
                     </Typography>
                     <Typography
                       variant="caption"
@@ -120,7 +131,7 @@ const Blog = () => {
                     color="#686D76"
                     sx={{ fontFamily: "serif" }}
                   >
-                    {blog?.summary}
+                    {blog?.summary ? blog.summary.slice(0, 126) : ""}
                   </Typography>
                 </CardContent>
                 <CardActions sx={{ justifyContent: "space-around" }}>
@@ -135,6 +146,7 @@ const Blog = () => {
                       transition: "transform 0.2s",
                       "&:hover": { transform: "scale(1.05)" },
                     }}
+                    onClick={() => handleContinueClick(blog?.url)}
                   >
                     Continue
                   </Button>
