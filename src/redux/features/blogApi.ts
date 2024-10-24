@@ -9,7 +9,15 @@ const blogApi = baseApi.injectEndpoints({
       }),
       providesTags: ["skill"],
     }),
+
+    getSingleBlog: builder.query({
+      query: (id) => ({
+        url: `/blogs/${id}`,
+        method: "GET",
+      }),
+      providesTags: ["blog"],
+    }),
   }),
 });
 
-export const { useGetAllBlogsQuery } = blogApi;
+export const { useGetAllBlogsQuery, useGetSingleBlogQuery } = blogApi;

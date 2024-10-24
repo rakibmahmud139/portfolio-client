@@ -39,7 +39,7 @@ const ProjectDetails = () => {
           <Grid container spacing={4} mt="48px">
             <Grid item xs={12} md={6}>
               <Card
-                data-aos="fade-up-left"
+                data-aos="fade-up"
                 data-aos-easing="linear"
                 data-aos-duration="2000"
               >
@@ -53,7 +53,7 @@ const ProjectDetails = () => {
             </Grid>
             <Grid item xs={12} md={6}>
               <Card
-                data-aos="zoom-in-up"
+                data-aos="fade-up"
                 data-aos-easing="linear"
                 data-aos-duration="2000"
                 sx={{ height: "400px" }}

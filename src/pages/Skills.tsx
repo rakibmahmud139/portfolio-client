@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import Marquee from "react-fast-marquee";
 import { useGetAllSkillsQuery } from "../redux/features/skillApi";
 import { TSkill } from "../types";
@@ -13,7 +13,7 @@ const Skills = () => {
   return (
     <div id="skill" style={{ marginTop: "96px" }}>
       <Typography
-        data-aos="fade-right"
+        data-aos="fade-up"
         data-aos-easing="linear"
         data-aos-duration="2000"
         component="h1"
@@ -28,65 +28,61 @@ const Skills = () => {
         Professional Skills
       </Typography>
       <Container>
-        <Marquee
-          gradient
-          gradientWidth={100}
-          gradientColor="#1f1f38"
-          pauseOnHover
-        >
-          <Box
-            sx={{
-              width: "100%",
-              mt: 3,
-              display: "flex",
-              boxShadow: "0 px 6px 0 #373A40",
-              gap: "64px",
-              textAlign: "center",
-              py: 6,
-              px: {
-                xs: 3,
-                sm: 0,
-              },
-            }}
-          >
+        <Box>
+          <Grid container spacing={2}>
             {skills?.data?.map((skill: TSkill) => (
-              <Box
-                data-aos="fade-left"
-                data-aos-easing="linear"
-                data-aos-duration="2000"
-                key={skill._id}
-                sx={{
-                  transition: "transform 0.5s",
-                  py: 1,
-                  px: 4,
-                  ml: 6,
-                  background: "rgba(255, 255, 255, 0.1)",
-                  borderRadius: 3,
-                  "&:hover": {
-                    transform: "scale(1.05)",
-                  },
-                  boxShadow: `0 4px 8px 0 ${
-                    skill?.bgColor ? skill?.bgColor : "#FF8F00"
-                  }, 0 6px 12px 0 ${
-                    skill?.bgColor ? skill?.bgColor : "#FF8F00"
-                  }`,
-                }}
-              >
-                <img
-                  src={skill?.image}
-                  alt={skill?.skillName}
-                  style={{ width: "5rem", margin: "0 auto" }}
-                />
-                <Typography sx={{ mt: 2, fontFamily: "serif" }}>
-                  {skill?.skillName}
-                </Typography>
-              </Box>
+              <Grid item xs={12} sm={6} md={2} key={skill._id}>
+                <Box
+                  data-aos="fade-up"
+                  data-aos-easing="linear"
+                  data-aos-duration="2000"
+                  sx={{
+                    border: "1px solid #FF8F00",
+                    borderRadius: "16px",
+                    display: "flex",
+                    justifyContent: "center",
+                    gap: 4,
+                    padding: 2,
+                    boxShadow: "0px 4px 10px rgba(255, 143, 0, 0.5)",
+                    "&:hover": { transform: "scale(1.1)" },
+                  }}
+                >
+                  <img
+                    src={skill?.image}
+                    alt={skill?.skillName}
+                    style={{ width: "24px" }}
+                  />
+                  <Typography sx={{ fontFamily: "serif", color: "#fff" }}>
+                    {skill?.skillName}
+                  </Typography>
+                </Box>
+              </Grid>
             ))}
-          </Box>
-        </Marquee>
+          </Grid>
+        </Box>
       </Container>
     </div>
   );
 };
 
 export default Skills;
+
+{
+  /* <Box
+  sx={{
+    border: "1px solid #FF8F00",
+    px: "18px",
+    borderRadius: "16px",
+  }}
+>
+  <Typography
+    sx={{
+      color: "#fff",
+      fontSize: "24px",
+      textAlign: "center",
+    }}
+  >
+    Frontend
+  </Typography>
+</Box>; */
+}

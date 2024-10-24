@@ -1,7 +1,6 @@
 import { Container, Typography, Box, Button } from "@mui/material";
 import avatar from "../assets/2f3f6777-cfb5-4293-bc2c-0f5c4cebe90a-removebg-preview.png";
 import { Link } from "react-scroll";
-import DownloadForOfflineIcon from "@mui/icons-material/DownloadForOffline";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -10,10 +9,7 @@ AOS.init();
 const Banner = () => {
   return (
     <div id="home">
-      <Container
-        maxWidth="lg"
-        sx={{ pt: { xs: "16px", sm: "32px", md: "48px" } }}
-      >
+      <Container sx={{ pt: { xs: "16px", sm: "32px", md: "48px" } }}>
         <Box
           sx={{
             display: { xs: "block", md: "flex" },
@@ -34,23 +30,23 @@ const Banner = () => {
                 fontFamily: "sans-serif",
               }}
             >
-              Hi,
+              Hi, I'm
             </Typography>
             <Typography
               component="h1"
               sx={{
                 color: "#fff",
-                fontSize: { xs: "28px", sm: "32px", md: "48px" },
+                fontSize: { xs: "28px", sm: "32px", md: "52px" },
                 fontFamily: "sans-serif",
               }}
             >
-              I'm Rakib Mahmud
+              Rakib Hosen
             </Typography>
             <Typography
               component="h1"
               sx={{
                 color: "#fff",
-                fontSize: { xs: "28px", sm: "32px", md: "48px" },
+                fontSize: { xs: "20px", sm: "24px", md: "32px" },
                 fontFamily: "sans-serif",
               }}
             >
@@ -61,7 +57,6 @@ const Banner = () => {
                 color: "#fff",
                 mt: "16px",
                 width: { xs: "100%", sm: "420px", md: "520px" },
-                fontFamily: "serif",
               }}
             >
               A passionate web developer with a knack for crafting dynamic and
@@ -92,19 +87,21 @@ const Banner = () => {
                     border: "0px",
                     borderRadius: "20px",
                     padding: "8px 16px",
+                    "&:hover": {
+                      transform: "scale(1.05)",
+                      bgcolor: "#FF8F00",
+                    },
                   }}
                 >
                   Projects
                 </Button>
               </Link>
               <a
-                href="/Rakib-Mahmud-Resume.pdf"
-                download={true}
+                href="https://drive.google.com/file/d/1yxFKpGacopM7aQhlXi71dmYyUNI4Binz/view?usp=drive_link"
                 target="_blank"
                 rel="noreferrer"
               >
                 <Button
-                  endIcon={<DownloadForOfflineIcon />}
                   sx={{
                     backgroundColor: "#5C636E",
                     color: "#fff",
@@ -112,9 +109,13 @@ const Banner = () => {
                     border: "0px",
                     borderRadius: "20px",
                     padding: "8px 16px",
+                    "&:hover": {
+                      transform: "scale(1.05)",
+                      bgcolor: "#5C636E",
+                    },
                   }}
                 >
-                  Download CV
+                  View Resume
                 </Button>
               </a>
             </Box>
@@ -123,13 +124,21 @@ const Banner = () => {
             data-aos="fade-left"
             data-aos-duration="2000"
             data-aos-easing="linear"
-            sx={{ mt: { xs: "24px", md: "0" } }}
+            sx={{
+              mt: { xs: "24px", md: "0" },
+              background: "linear-gradient(45deg, #FF8F00, #1E90FF)",
+              borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%",
+              padding: "20px",
+              display: "inline-block",
+              overflow: "hidden",
+              width: { xs: "100%", md: "auto" },
+            }}
           >
             <img
               src={avatar}
               alt="avatar"
               style={{
-                maxWidth: "100%",
+                maxWidth: "350px",
                 width: "auto",
                 height: "auto",
                 minWidth: "320px",

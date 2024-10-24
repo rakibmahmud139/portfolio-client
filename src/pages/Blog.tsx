@@ -19,8 +19,6 @@ AOS.init();
 const Blog = () => {
   const { data: blogs } = useGetAllBlogsQuery({});
 
-  console.log(blogs);
-
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString("en-CA");
@@ -33,7 +31,7 @@ const Blog = () => {
   return (
     <div id="blog" style={{ marginTop: "96px" }}>
       <Typography
-        data-aos="zoom-out-right"
+        data-aos="fade-up"
         data-aos-easing="linear"
         data-aos-duration="2000"
         component="h1"
@@ -47,19 +45,12 @@ const Blog = () => {
       >
         My Blogs
       </Typography>
-      <Container
-        sx={{
-          background: "rgba(255, 255, 255, 0.1)",
-          borderRadius: "48px",
-          pt: "24px",
-          pb: "24px",
-        }}
-      >
+      <Container>
         <Grid container spacing={4} justifyContent="center" alignItems="center">
           {blogs?.data?.slice(0, 4).map((blog: TBlog) => (
             <Grid key={blog?._id} item xs={12} md={6}>
               <Card
-                data-aos="zoom-out-left"
+                data-aos="fade-up"
                 data-aos-easing="linear"
                 data-aos-duration="2000"
                 sx={{
@@ -128,7 +119,7 @@ const Blog = () => {
                   </Typography>
                   <Typography
                     variant="body2"
-                    color="#686D76"
+                    color="#fff"
                     sx={{ fontFamily: "serif" }}
                   >
                     {blog?.summary ? blog.summary.slice(0, 126) : ""}
@@ -144,11 +135,19 @@ const Blog = () => {
                       width: "30%",
                       borderRadius: 2,
                       transition: "transform 0.2s",
-                      "&:hover": { transform: "scale(1.05)" },
+                      "&:hover": {
+                        transform: "scale(1.05)",
+                        bgcolor: "#FF8F00",
+                      },
                     }}
                     onClick={() => handleContinueClick(blog?.url)}
                   >
-                    Continue
+                    <a
+                      href={`/blog/${blog?._id}`}
+                      style={{ textDecoration: "none", color: "#fff" }}
+                    >
+                      Continue
+                    </a>
                   </Button>
                 </CardActions>
               </Card>

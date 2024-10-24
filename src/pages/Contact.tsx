@@ -1,5 +1,9 @@
 import emailjs from "@emailjs/browser";
 import CallIcon from "@mui/icons-material/Call";
+import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
+import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import InstagramIcon from "@mui/icons-material/Instagram";
 import {
   Box,
   Button,
@@ -54,7 +58,7 @@ const Contact = () => {
       }}
     >
       <Typography
-        data-aos="fade-down"
+        data-aos="fade-up"
         data-aos-easing="linear"
         data-aos-duration="2000"
         component="h1"
@@ -89,15 +93,16 @@ const Contact = () => {
               Get In Touch
             </Typography>
             <Box
-              data-aos="fade-right"
+              data-aos="fade-up"
               data-aos-easing="linear"
               data-aos-duration="2000"
               display="flex"
               alignItems="center"
+              color="#fff"
               gap={2}
               mt={6}
             >
-              <img src={emailImg} alt="email" width="24px" />
+              <EmailRoundedIcon sx={{ mr: 1, fontSize: "24px" }} />
               <Box>
                 <Typography sx={{ fontFamily: "serif" }}>Talk To Me</Typography>
                 <Typography sx={{ fontFamily: "serif" }}>
@@ -106,11 +111,12 @@ const Contact = () => {
               </Box>
             </Box>
             <Box
-              data-aos="fade-left"
+              data-aos="fade-up"
               data-aos-easing="linear"
               data-aos-duration="2000"
               display="flex"
               alignItems="center"
+              color="#fff"
               gap={2}
               mt={2}
             >
@@ -123,19 +129,18 @@ const Contact = () => {
               </Box>
             </Box>
             <Typography
-              data-aos="fade-down"
+              data-aos="fade-up"
               data-aos-easing="linear"
               data-aos-duration="2000"
               component="h6"
               color="#FF8F00"
               mt={6}
-              mb={2}
               sx={{ fontFamily: "sans-serif" }}
             >
               FOLLOW ME
             </Typography>
             <Box
-              data-aos="flip-left"
+              data-aos="fade-up"
               data-aos-easing="linear"
               data-aos-duration="2000"
               display="flex"
@@ -143,18 +148,15 @@ const Contact = () => {
               gap={2}
             >
               <a href="https://www.facebook.com/ishan.mahmud.9849/">
-                <img src={fbImg} alt="facebook" width="24px" />
+                <FacebookRoundedIcon sx={{ color: "#fff", fontSize: "24px" }} />
               </a>
               <a href="https://www.linkedin.com/in/rakib-mahmud-0b7159278/">
-                <img
-                  src={linkImg}
-                  alt="linkedin"
-                  width="24px"
-                  style={{ marginLeft: "24px", marginRight: "24px" }}
+                <LinkedInIcon
+                  sx={{ color: "#fff", fontSize: "24px", my: "12px" }}
                 />
               </a>
               <a href="https://www.instagram.com/rakib_mahmud_2/">
-                <img src={instImg} alt="instagram" width="24px" />
+                <InstagramIcon sx={{ color: "#fff", fontSize: "24px" }} />
               </a>
             </Box>
           </Grid>
@@ -173,7 +175,7 @@ const Contact = () => {
               }}
             >
               <TextField
-                data-aos="fade-up-left"
+                data-aos="fade-up"
                 data-aos-easing="linear"
                 data-aos-duration="2000"
                 required
@@ -181,9 +183,10 @@ const Contact = () => {
                 size="small"
                 fullWidth
                 name="from_name"
+                sx={{ color: "#fff" }}
               />
               <TextField
-                data-aos="fade-up-right"
+                data-aos="fade-up"
                 data-aos-easing="linear"
                 data-aos-duration="2000"
                 label="Last Name"
@@ -191,7 +194,7 @@ const Contact = () => {
                 fullWidth
               />
               <TextField
-                data-aos="fade-up-right"
+                data-aos="fade-up"
                 data-aos-easing="linear"
                 data-aos-duration="2000"
                 required
@@ -201,7 +204,7 @@ const Contact = () => {
                 name="from_email"
               />
               <TextField
-                data-aos="fade-up-left"
+                data-aos="fade-up"
                 data-aos-easing="linear"
                 data-aos-duration="2000"
                 label="Phone"
@@ -210,7 +213,7 @@ const Contact = () => {
                 name="from_phone"
               />
               <TextField
-                data-aos="fade-up-right"
+                data-aos="fade-up"
                 data-aos-easing="linear"
                 data-aos-duration="2000"
                 required
@@ -231,6 +234,10 @@ const Contact = () => {
                 sx={{
                   gridColumn: "1 / -1",
                   background: "#FF8F00",
+                  "&:hover": {
+                    transform: "scale(1.05)",
+                    bgcolor: "#FF8F00",
+                  },
                 }}
                 fullWidth
               >

@@ -9,22 +9,19 @@ import Project from "./pages/Project";
 import Skills from "./pages/Skills";
 import Blog from "./pages/Blog";
 import Footer from "./pages/Footer";
+import Education from "./pages/Education";
 
 function App() {
   return (
     <Box sx={{ bgcolor: "#1f1f38" }}>
       <Navbar />
-      <Box
-        sx={{
-          backgroundImage: `url(${bannerImage})`,
-          backgroundSize: "cover",
-        }}
-      >
+      <Box>
         <Banner />
       </Box>
       <About />
       <Project />
       <Skills />
+      <Education />
       <Blog />
       <Contact />
       <Footer />

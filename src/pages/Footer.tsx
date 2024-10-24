@@ -11,14 +11,14 @@ const Footer = () => {
     <Box
       component="footer"
       sx={{
-        backgroundColor: "#393E46",
+        // backgroundColor: "#393E46",
         color: "#fff",
         py: 4,
         px: 2,
         mt: "96px",
       }}
     >
-      <Box
+      {/* <Box
         display="flex"
         justifyContent="center"
         alignItems="center"
@@ -75,7 +75,7 @@ const Footer = () => {
             </Box>
           </Box>
         </Box>
-      </Box>
+      </Box> */}
       <Box
         sx={{
           display: { md: "flex" },

@@ -32,7 +32,7 @@ const Project = () => {
   return (
     <div id="project" style={{ paddingTop: "96px" }}>
       <Typography
-        data-aos="fade-down"
+        data-aos="fade-up"
         data-aos-duration="2000"
         data-aos-easing="linear"
         component="h1"
@@ -102,7 +102,10 @@ const Project = () => {
                       width: "33%",
                       borderRadius: 2,
                       transition: "transform 0.2s",
-                      "&:hover": { transform: "scale(1.05)" },
+                      "&:hover": {
+                        transform: "scale(1.05)",
+                        bgcolor: "#FF8F00",
+                      },
                     }}
                   >
                     Demo
@@ -135,7 +138,10 @@ const Project = () => {
                       width: "33%",
                       borderRadius: 2,
                       transition: "transform 0.2s",
-                      "&:hover": { transform: "scale(1.05)" },
+                      "&:hover": {
+                        transform: "scale(1.05)",
+                        bgcolor: "#939185",
+                      },
                     }}
                   >
                     <a

@@ -35,33 +35,17 @@ const services = [
 const About = () => {
   return (
     <div id="about">
-      <Box
-        sx={{
-          backgroundImage: `url(${bannerImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          pt: "96px",
-          pb: "72px",
-        }}
-      >
+      <Box>
         <Container
           maxWidth="lg"
           sx={{
-            backgroundColor: "rgba(179, 200, 207, 0.8)",
-            borderRadius: "24px",
-            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
             pt: "48px",
             pb: "48px",
           }}
         >
           <Box>
             <Typography
-              data-aos="fade-up-right"
+              data-aos="fade-up"
               data-aos-duration="2000"
               data-aos-easing="linear"
               component="h1"
@@ -76,13 +60,13 @@ const About = () => {
               About Me
             </Typography>
             <Typography
-              data-aos="fade-up-left"
+              data-aos="fade-up"
               data-aos-duration="2000"
               data-aos-easing="linear"
               sx={{
                 textAlign: "center",
                 px: { md: "64px" },
-                color: "#686D76",
+                color: "#fff",
                 marginBottom: "32px",
                 fontFamily: "serif",
               }}
@@ -95,47 +79,9 @@ const About = () => {
               without hard work and dedication. I want to join a professional
               life to gain exposure, confidence, and a sense of achievement.
             </Typography>
-            <Typography
-              data-aos="fade-down-right"
-              data-aos-duration="2000"
-              data-aos-easing="linear"
-              component="h1"
-              variant="h4"
-              sx={{
-                textAlign: "center",
-                px: "64px",
-                color: "#FF8F00",
-                marginBottom: "32px",
-                fontFamily: "sans-serif",
-              }}
-            >
-              Education
-            </Typography>
-            <Box
-              data-aos="fade-down-left"
-              data-aos-duration="2000"
-              data-aos-easing="linear"
-              sx={{
-                textAlign: "center",
-                mb: "64px",
-                border: "1px solid #373a40",
-                p: "8px",
-              }}
-            >
-              <Typography
-                sx={{ fontSize: "24px", color: "#373a40", fontFamily: "serif" }}
-              >
-                Bachelor Of Business Administration(BBA) in Accounting(Honours)
-              </Typography>
-              <Typography
-                sx={{ fontSize: "20px", color: "#373a40", fontFamily: "serif" }}
-              >
-                Comilla Victoria Govt. Collage
-              </Typography>
-            </Box>
 
             <Typography
-              data-aos="fade-down"
+              data-aos="fade-up"
               data-aos-duration="2000"
               data-aos-easing="linear"
               component="h1"
