@@ -49,7 +49,7 @@ const Project = () => {
       <Container>
         <Grid container spacing={4}>
           {projects?.data?.map((project: TProject) => (
-            <Grid key={project?._id} item xs={12} md={4}>
+            <Grid key={project?._id} item xs={12} sm={6} md={4}>
               <Card
                 data-aos="fade-up"
                 data-aos-duration="2000"
@@ -82,8 +82,9 @@ const Project = () => {
                 />
                 <CardContent>
                   <Typography
-                    variant="h5"
-                    component="div"
+                    variant="h6"
+                    color="#fff"
+                    component="h1"
                     sx={{ fontFamily: "serif" }}
                   >
                     {project?.projectTitle}
@@ -129,7 +130,6 @@ const Project = () => {
                   </Button>
                   <Button
                     variant="contained"
-                    endIcon={<ArrowCircleRightIcon />}
                     sx={{
                       bgcolor: "#939185",
                       mt: 2,

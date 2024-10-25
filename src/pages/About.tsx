@@ -100,7 +100,7 @@ const About = () => {
               <Box
                 sx={{
                   textAlign: "center",
-                  display: { xs: "block", md: "flex" },
+                  display: { xs: "block", sm: "flex", md: "flex", gap: 4 },
                   justifyContent: "space-evenly",
                 }}
               >

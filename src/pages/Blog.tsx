@@ -48,7 +48,7 @@ const Blog = () => {
       <Container>
         <Grid container spacing={4} justifyContent="center" alignItems="center">
           {blogs?.data?.slice(0, 4).map((blog: TBlog) => (
-            <Grid key={blog?._id} item xs={12} md={6}>
+            <Grid key={blog?._id} item xs={12} sm={6} md={4}>
               <Card
                 data-aos="fade-up"
                 data-aos-easing="linear"
@@ -63,6 +63,7 @@ const Blog = () => {
                   overflow: "hidden",
                   width: "100%",
                   maxWidth: 360,
+                  maxHeight: 400,
                   transition: "transform 0.5s",
                   "&:hover": {
                     border: "2px solid #FF8F00",
@@ -109,30 +110,21 @@ const Blog = () => {
                       {blog?.platform}
                     </Typography>
                   </Box>
-                  <Typography
-                    variant="h6"
-                    component="div"
-                    mb={2}
-                    sx={{ fontFamily: "serif" }}
-                  >
+                  <Typography fontSize={16} mb={1} sx={{ fontFamily: "serif" }}>
                     {blog?.title}
                   </Typography>
-                  <Typography
-                    variant="body2"
-                    color="#fff"
-                    sx={{ fontFamily: "serif" }}
-                  >
-                    {blog?.summary ? blog.summary.slice(0, 126) : ""}
+                  <Typography color="#fff" fontSize={12}>
+                    {blog?.summary ? blog.summary.slice(0, 100) : ""}...
                   </Typography>
                 </CardContent>
-                <CardActions sx={{ justifyContent: "space-around" }}>
+                <CardActions>
                   <Button
                     variant="contained"
                     sx={{
                       bgcolor: "#FF8F00",
-                      mt: 2,
-                      mb: 1,
-                      width: "30%",
+                      width: "50%",
+                      bottom: 0,
+                      pl: 1,
                       borderRadius: 2,
                       transition: "transform 0.2s",
                       "&:hover": {

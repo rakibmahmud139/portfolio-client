@@ -14,6 +14,8 @@ import { useParams } from "react-router-dom";
 import { useGetSingleProjectsQuery } from "../redux/features/projectApi";
 import Footer from "./Footer";
 import "aos/dist/aos.css";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 AOS.init();
 
@@ -25,120 +27,168 @@ const ProjectDetails = () => {
   return (
     <Box sx={{ bgcolor: "#1f1f38" }}>
       <Container>
-        <Box py={4}>
-          <Typography
-            align="center"
-            color="#FF8F00"
+        <Box sx={{ pt: "8px" }}>
+          <Box
+            component="img"
+            src={project?.data?.projectImage}
+            alt="Blog"
             sx={{
-              fontSize: { xs: "24px", md: "32px" },
-              fontFamily: "sans-serif",
+              width: "100%",
+              borderRadius: "16px",
+              height: { xs: "200px", sm: "350px", md: "500px" }, // Responsive height
             }}
-          >
-            {project?.data?.projectTitle}
-          </Typography>
-          <Grid container spacing={4} mt="48px">
-            <Grid item xs={12} md={6}>
-              <Card
-                data-aos="fade-up"
-                data-aos-easing="linear"
-                data-aos-duration="2000"
+          />
+        </Box>
+        <Typography
+          sx={{ fontSize: { md: 28, xs: 20 }, textAlign: { md: "center" } }}
+          mb={2}
+          mt={2}
+          color="#FF8F00"
+          fontWeight={96}
+        >
+          {project?.data?.projectTitle}
+        </Typography>
+        <Box
+          sx={{ pl: { md: "16px", sm: "2px", xs: "2px" } }}
+          pr={8}
+          gap={16}
+          mt={5}
+          alignItems="center"
+        >
+          <Box>
+            <Typography
+              sx={{ fontSize: { md: 28, xs: 20 } }}
+              mb={2}
+              color="#FF8F00"
+              fontWeight={96}
+            >
+              Frontend Technologies
+            </Typography>
+          </Box>
+          <Box>
+            <Typography color="#FFF">
+              {project?.data?.usedTechnologiesFrontend.join(", ")}
+            </Typography>
+          </Box>
+        </Box>
+        <Box
+          sx={{ pl: { md: "16px", sm: "2px", xs: "2px" } }}
+          pr={8}
+          gap={16}
+          mt={5}
+          alignItems="center"
+        >
+          <Box>
+            <Typography
+              sx={{ fontSize: { md: 28, xs: 20 } }}
+              mb={2}
+              color="#FF8F00"
+              fontWeight={96}
+            >
+              Backend Technologies
+            </Typography>
+          </Box>
+          <Box>
+            <Typography color="#FFF">
+              {project?.data?.usedTechnologiesBackend.join(", ")}
+            </Typography>
+          </Box>
+        </Box>
+        <Box
+          sx={{ pl: { md: "16px", sm: "2px", xs: "2px" } }}
+          pr={8}
+          gap={16}
+          mt={5}
+          alignItems="center"
+        >
+          <Box>
+            <Typography
+              sx={{ fontSize: { md: 28, xs: 20 } }}
+              mb={2}
+              color="#FF8F00"
+              fontWeight={96}
+            >
+              Description
+            </Typography>
+          </Box>
+          <Box>
+            <Typography color="#FFF">{project?.data?.description}</Typography>
+          </Box>
+        </Box>
+        <Box
+          sx={{ pl: { md: "16px", sm: "2px", xs: "2px" } }}
+          pr={8}
+          gap={16}
+          mt={5}
+          alignItems="center"
+        >
+          <Box>
+            <Typography
+              sx={{ fontSize: { md: 28, xs: 20 } }}
+              mb={2}
+              color="#FF8F00"
+              fontWeight={96}
+            >
+              Links
+            </Typography>
+          </Box>
+          <Box>
+            <Typography
+              color="#fff"
+              sx={{ display: { md: "flex", sm: "flex", gap: 20 } }}
+            >
+              <Link
+                href={project?.data?.liveLink}
+                target="_blank"
+                rel="noopener"
+                sx={{
+                  textDecoration: "none",
+                  color: "#fff",
+                  fontFamily: "serif",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 1,
+                }}
               >
-                <CardMedia
-                  component="img"
-                  alt={project?.data?.projectTitle}
-                  height="400px"
-                  image={project?.data?.projectImage}
-                />
-              </Card>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Card
-                data-aos="fade-up"
-                data-aos-easing="linear"
-                data-aos-duration="2000"
-                sx={{ height: "400px" }}
+                Live Site <OpenInNewIcon sx={{ fontSize: "16px" }} />
+              </Link>
+
+              <Link
+                href={project?.data?.repositoryURL}
+                target="_blank"
+                rel="noopener"
+                sx={{
+                  textDecoration: "none",
+                  mx: { md: "24px" },
+                  color: "#fff",
+                  fontFamily: "serif",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 1,
+                }}
               >
-                <CardContent>
-                  <Typography variant="h6">Description</Typography>
-                  <Typography
-                    variant="body2"
-                    color="#686D76"
-                    paragraph
-                    sx={{ fontFamily: "serif" }}
-                  >
-                    {project?.data?.description}
-                  </Typography>
-                  <Typography variant="h6">
-                    Technologies Used (Frontend)
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="#686D76"
-                    paragraph
-                    sx={{ fontFamily: "serif" }}
-                  >
-                    {project?.data?.usedTechnologiesFrontend.join(", ")}
-                  </Typography>
-                  <Typography variant="h6">
-                    Technologies Used (Backend)
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="#686D76"
-                    paragraph
-                    sx={{ fontFamily: "serif" }}
-                  >
-                    {project?.data?.usedTechnologiesBackend.join(", ")}
-                  </Typography>
-                  <Typography variant="h6">Links</Typography>
-                  <Typography variant="body2">
-                    <Link
-                      href={project?.data?.liveLink}
-                      target="_blank"
-                      rel="noopener"
-                      sx={{
-                        textDecoration: "none",
-                        color: "blue",
-                        fontFamily: "serif",
-                      }}
-                    >
-                      Live Site
-                    </Link>
+                Client Repo <GitHubIcon sx={{ fontSize: "16px" }} />
+              </Link>
 
-                    <Link
-                      href={project?.data?.repositoryURL}
-                      target="_blank"
-                      rel="noopener"
-                      sx={{
-                        textDecoration: "none",
-                        mx: "24px",
-                        color: "blue",
-                        fontFamily: "serif",
-                      }}
-                    >
-                      Client Repo
-                    </Link>
-
-                    <Link
-                      href={project?.data?.backEndGitHubLink}
-                      target="_blank"
-                      rel="noopener"
-                      sx={{
-                        textDecoration: "none",
-                        color: "blue",
-                        fontFamily: "serif",
-                      }}
-                    >
-                      Server Repo
-                    </Link>
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
+              <Link
+                href={project?.data?.backEndGitHubLink}
+                target="_blank"
+                rel="noopener"
+                sx={{
+                  textDecoration: "none",
+                  color: "#fff",
+                  fontFamily: "serif",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 1,
+                }}
+              >
+                Server Repo <GitHubIcon sx={{ fontSize: "16px" }} />
+              </Link>
+            </Typography>
+          </Box>
         </Box>
       </Container>
-      <Footer />
     </Box>
   );
 };

@@ -3,6 +3,7 @@ import avatar from "../assets/2f3f6777-cfb5-4293-bc2c-0f5c4cebe90a-removebg-prev
 import { Link } from "react-scroll";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { TypeAnimation } from "react-type-animation";
 
 AOS.init();
 
@@ -15,13 +16,15 @@ const Banner = () => {
             display: { xs: "block", md: "flex" },
             justifyContent: "space-between",
             alignItems: "center",
-            textAlign: "left",
+            textAlign: { xs: "center", md: "left" }, // Center text on smaller screens
+            flexDirection: { xs: "column", md: "row" }, // Stack vertically on small screens
           }}
         >
           <Box
             data-aos="fade-right"
             data-aos-duration="2000"
             data-aos-easing="linear"
+            sx={{ mb: { xs: "24px", md: "0" } }} // Adds margin for spacing on smaller screens
           >
             <Typography
               sx={{
@@ -50,13 +53,27 @@ const Banner = () => {
                 fontFamily: "sans-serif",
               }}
             >
-              Full Stack Developer
+              <TypeAnimation
+                sequence={[
+                  "Full Stack Developer",
+                  2000,
+                  "Mern Stack Developer",
+                  2000,
+                  "Front End Developer",
+                  2000,
+                  "Back End Developer",
+                  2000,
+                ]}
+                style={{ fontSize: "24px" }}
+                repeat={Infinity}
+              />
             </Typography>
             <Typography
               sx={{
                 color: "#fff",
                 mt: "16px",
-                width: { xs: "100%", sm: "420px", md: "520px" },
+                width: { xs: "100%", sm: "100%", md: "520px" },
+                textAlign: { xs: "center", sm: "center", md: "left" },
               }}
             >
               A passionate web developer with a knack for crafting dynamic and
@@ -68,7 +85,7 @@ const Banner = () => {
               sx={{
                 mt: { xs: "24px", sm: "36px", md: "48px" },
                 display: "flex",
-                justifyContent: { md: "flex-start" },
+                justifyContent: { xs: "center", md: "flex-start" }, // Center buttons on smaller screens
                 gap: "12px",
               }}
             >
@@ -131,17 +148,16 @@ const Banner = () => {
               padding: "20px",
               display: "inline-block",
               overflow: "hidden",
-              width: { xs: "100%", md: "auto" },
+              width: { xs: "300px", sm: "320px", md: "auto" }, // Ensures responsive width
+              textAlign: "center", // Center image on smaller screens
             }}
           >
             <img
               src={avatar}
               alt="avatar"
               style={{
-                maxWidth: "350px",
-                width: "auto",
+                width: "100%",
                 height: "auto",
-                minWidth: "320px",
               }}
             />
           </Box>
