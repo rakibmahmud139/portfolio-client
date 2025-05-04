@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useGetSingleBlogQuery } from "../redux/features/blogApi";
 import { Box, Container, Typography } from "@mui/material";
+import { convert } from "html-to-text";
 
 const BlogDetails = () => {
   const { id } = useParams();
@@ -11,6 +12,12 @@ const BlogDetails = () => {
     const date = new Date(dateString);
     return date.toLocaleDateString("en-CA");
   };
+
+  const options = {
+    wordwrap: 130,
+  };
+
+  const blogContent = convert(blog?.data?.content, options);
 
   return (
     <Box sx={{ bgcolor: "#1f1f38" }}>
@@ -71,7 +78,7 @@ const BlogDetails = () => {
           >
             {blog?.data?.title}
           </Typography>
-          {blog?.data?.content}
+          {blogContent}
         </Box>
       </Container>
     </Box>

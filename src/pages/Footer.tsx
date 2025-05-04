@@ -89,7 +89,7 @@ const Footer = () => {
             variant="body2"
             sx={{ mb: { xs: "12px", fontFamily: "serif" } }}
           >
-            RakibMahmud- © 2024 All Rights Reserved
+            RakibMahmud- © 2025 All Rights Reserved
           </Typography>
         </Box>
 
