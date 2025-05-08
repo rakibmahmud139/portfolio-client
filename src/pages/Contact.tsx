@@ -183,7 +183,17 @@ const Contact = () => {
                 size="small"
                 fullWidth
                 name="from_name"
-                sx={{ color: "#fff" }}
+                sx={{
+                  "& .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "#fff", // default border color
+                  },
+                  "& .MuiInputBase-input": {
+                    color: "#fff", // input text color
+                  },
+                  "& .MuiInputLabel-root": {
+                    color: "#fff", // label color
+                  },
+                }}
               />
               <TextField
                 data-aos="fade-up"
@@ -192,6 +202,17 @@ const Contact = () => {
                 label="Last Name"
                 size="small"
                 fullWidth
+                sx={{
+                  "& .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "#fff", // default border color
+                  },
+                  "& .MuiInputBase-input": {
+                    color: "#fff", // input text color
+                  },
+                  "& .MuiInputLabel-root": {
+                    color: "#fff", // label color
+                  },
+                }}
               />
               <TextField
                 data-aos="fade-up"
@@ -202,6 +223,17 @@ const Contact = () => {
                 size="small"
                 fullWidth
                 name="from_email"
+                sx={{
+                  "& .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "#fff", // default border color
+                  },
+                  "& .MuiInputBase-input": {
+                    color: "#fff", // input text color
+                  },
+                  "& .MuiInputLabel-root": {
+                    color: "#fff", // label color
+                  },
+                }}
               />
               <TextField
                 data-aos="fade-up"
@@ -211,6 +243,17 @@ const Contact = () => {
                 size="small"
                 fullWidth
                 name="from_phone"
+                sx={{
+                  "& .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "#fff", // default border color
+                  },
+                  "& .MuiInputBase-input": {
+                    color: "#fff", // input text color
+                  },
+                  "& .MuiInputLabel-root": {
+                    color: "#fff", // label color
+                  },
+                }}
               />
               <TextField
                 data-aos="fade-up"
@@ -222,7 +265,18 @@ const Contact = () => {
                 size="small"
                 multiline
                 rows={4}
-                sx={{ gridColumn: { xs: "1 / -1", sm: "1 / -1" } }}
+                sx={{
+                  gridColumn: { xs: "1 / -1", sm: "1 / -1" },
+                  "& .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "#fff", // default border color
+                  },
+                  "& .MuiInputBase-input": {
+                    color: "#fff", // input text color
+                  },
+                  "& .MuiInputLabel-root": {
+                    color: "#fff", // label color
+                  },
+                }}
                 fullWidth
               />
               <Button
