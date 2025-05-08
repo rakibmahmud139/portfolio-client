@@ -46,7 +46,7 @@ const Blog = () => {
         My Blogs
       </Typography>
       <Container>
-        <Grid container spacing={4} justifyContent="center" alignItems="center">
+        <Grid container spacing={4}>
           {blogs?.data?.slice(0, 4).map((blog: TBlog) => (
             <Grid key={blog?._id} item xs={12} sm={6} md={4}>
               <Card
@@ -64,13 +64,13 @@ const Blog = () => {
                   width: "100%",
                   maxWidth: 360,
                   maxHeight: 400,
-                  transition: "transform 0.5s",
+                  // transition: "transform 0.5s",
                   "&:hover": {
                     border: "2px solid #FF8F00",
-                    transform: "scale(1.05)",
+                    // transform: "scale(1.05)",
                   },
-                  m: 2,
-                  mx: "auto",
+                  // m: 2,
+                  // mx: "auto",
                 }}
               >
                 <CardMedia

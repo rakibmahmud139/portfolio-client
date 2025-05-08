@@ -71,7 +71,7 @@ const About = () => {
                 fontFamily: "serif",
               }}
             >
-              Hi, I am Rakib Mahmud. A passionate web developer with a knack for
+              Hi, I am Rakib Hosen. A passionate web developer with a knack for
               crafting dynamic and user-friendly web experiences. I thrive on
               turning creative ideas into functional, aesthetically pleasing
               websites and web applications. I love coding. I am interested in
